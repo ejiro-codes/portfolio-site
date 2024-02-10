@@ -2,9 +2,37 @@ import { ReactTyped } from "react-typed";
 import { FaLinkedinIn, FaDiscord } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import test from "../public/profilePic.jpg";
+import target from "../public/Target_logo.svg.png";
+import sequoia from "../public/sequoia.png";
 //import "./App.css";
 
 //const profilePic = require("../public/profilePic.jpg");
+
+const job_experiences = [
+  {
+    logo: sequoia,
+    role: "Data Analyst",
+    summary:
+      "Tasked with maintaining a large database utilizing postgreSQL as well as various data manipulation libraries in python. Constucted dashboards and created reports that were instantly made accessible through automated emails and web applications that I designed using the streamlit framework.",
+    tasks: [
+      "Data Analysis: Primarily conducted through Python libraries such as Pandas and Numpy which aid with exploratory data analysis.",
+      "Data Cleaning and Transformation: Working with and cleansing data, ensuring consistency and proper articulation using Postgresql coincided with SQL toolkit SQLAlchemy integrated with Python.",
+      "Data Visualization and Presentation: Providing coherent summaries identifying patterns and trends in provided data. Creating visualizations including charts and dashboards with the aid of the Python library Streamlit, in order to convey said trends in an effective manner.",
+    ],
+  },
+  {
+    logo: target,
+    role: "Fulfillment Expert",
+    summary:
+      "Tasked primarily with locating and neatly packaging online orders that were to be shipped from the store and or picked up by guests. Very fast-paced environment as we were to always meet the assigned deadline for orders to be processed/due for pickup from the store. This entailed continuously pacing through the entirety of the store, searching for the items within our respective batches of orders whilst also attending to guests in need along the way",
+    tasks: [
+      "Picking and Packaging orders in a timely fashion",
+      "Training and supervising new members of staff",
+      "Ensuring that aisles were kept tidy and devoid of anything that could ruin the guest experience",
+      "Occasionally stocking shelves",
+    ],
+  },
+];
 
 function App() {
   return (
@@ -72,13 +100,49 @@ function App() {
 
       {/* Experience section*/}
       <div className="container pt-32">
-        <h1 className="text-center text-4xl font-bold">EXPERIENCE</h1>
-        <div className="flex">
-          <div className="flex-1">
-            {/** Target EXperience */}
-            <img src="" alt="HEYOO" />
-          </div>
-        </div>
+        <h1 className="text-center text-4xl font-bold pb-10">EXPERIENCE</h1>
+
+        {job_experiences.map((exp, index) => (
+          <>
+            <div className="flex pb-20">
+              <div
+                className="flex-2 px-32 pt-20"
+                style={{
+                  borderRight: "3px",
+                  borderRightColor: "black",
+                  borderRightStyle: "groove",
+                }}
+              >
+                {/** Target EXperience */}
+                <img
+                  src={exp.logo}
+                  alt="TARGET LOGO"
+                  style={{
+                    minHeight: "300px",
+                    minWidth: "300px",
+                    maxHeight: "400px",
+                    maxWidth: "400px",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+              <div className="flex-1 pl-10 pr-32 pt-10">
+                {/** Target EXperience */}
+                <h2 className="text-2xl underline pb-5">{exp.role}</h2>
+                <p>{exp.summary}</p>
+                <ul className="pt-5">
+                  {exp.tasks.map((task, index) => {
+                    return (
+                      <li className="pt-2" key={index}>
+                        {task}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          </>
+        ))}
       </div>
     </>
   );
