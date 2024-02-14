@@ -1,12 +1,33 @@
 import { ReactTyped } from "react-typed";
 import { FaLinkedinIn, FaDiscord } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
+import projects from "./projectDetails";
 import test from "../public/profilePic.jpg";
 import target from "../public/Target_logo.svg.png";
 import sequoia from "../public/sequoia.png";
+// import Slider from "react-slick";
+import { Carousel, ScrollingCarousel } from "@trendyol-js/react-carousel";
+import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 //import "./App.css";
 
 //const profilePic = require("../public/profilePic.jpg");
+
+//settings for horizontal slider
+// const settings = {
+//   infinite: false,
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   nextArrow: (
+//     <div>
+//       <div> {">>"} </div>
+//     </div>
+//   ),
+//   prevArrow: (
+//     <div>
+//       <div> {"<<"} </div>
+//     </div>
+//   ),
+// };
 
 const job_experiences = [
   {
@@ -143,6 +164,46 @@ function App() {
             </div>
           </>
         ))}
+
+        {/* Projects Horizontal Scroll bar */}
+        <div className="container pt-32 pb-20">
+          <h1 className="text-center text-4xl font-bold pb-10">Projects</h1>
+          <div className="container ">
+            <Carousel
+              show={3.5}
+              slide={2}
+              transition={0.5}
+              swiping={false}
+              rightArrow={
+                <HiArrowSmRight className="text-4xl text-black mt-32" />
+              }
+              leftArrow={
+                <HiArrowSmLeft className="text-4xl text-black mt-32" />
+              }
+            >
+              {projects.map((item) => (
+                <div className="" key={item.id}>
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    width={200}
+                    height={200}
+                    style={{
+                      display: "flex",
+                      objectFit: "fill",
+                      margin: "0 auto",
+                      // height: "40vh",
+                      // width: "80%",
+                      borderRadius: "5%",
+                    }}
+                  />
+                  <h2 className="text-sm">{item.title}</h2>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </div>
       </div>
     </>
   );
