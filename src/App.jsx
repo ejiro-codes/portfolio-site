@@ -1,80 +1,33 @@
 import { ReactTyped } from "react-typed";
 import { FaLinkedinIn, FaDiscord } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import projects from "./projectDetails";
+import {projects, job_experiences, roles} from "./projectDetails";
 import test from "../public/profilePic.jpg";
-import target from "../public/Target_logo.svg.png";
-import sequoia from "../public/sequoia.png";
 // import Slider from "react-slick";
 import { Carousel, ScrollingCarousel } from "@trendyol-js/react-carousel";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 //import "./App.css";
-
-//const profilePic = require("../public/profilePic.jpg");
-
-//settings for horizontal slider
-// const settings = {
-//   infinite: false,
-//   slidesToShow: 3,
-//   slidesToScroll: 1,
-//   nextArrow: (
-//     <div>
-//       <div> {">>"} </div>
-//     </div>
-//   ),
-//   prevArrow: (
-//     <div>
-//       <div> {"<<"} </div>
-//     </div>
-//   ),
-// };
-
-const job_experiences = [
-  {
-    logo: sequoia,
-    role: "Data Analyst",
-    summary:
-      "Tasked with maintaining a large database utilizing postgreSQL as well as various data manipulation libraries in python. Constucted dashboards and created reports that were instantly made accessible through automated emails and web applications that I designed using the streamlit framework.",
-    tasks: [
-      "Data Analysis: Primarily conducted through Python libraries such as Pandas and Numpy which aid with exploratory data analysis.",
-      "Data Cleaning and Transformation: Working with and cleansing data, ensuring consistency and proper articulation using Postgresql coincided with SQL toolkit SQLAlchemy integrated with Python.",
-      "Data Visualization and Presentation: Providing coherent summaries identifying patterns and trends in provided data. Creating visualizations including charts and dashboards with the aid of the Python library Streamlit, in order to convey said trends in an effective manner.",
-    ],
-  },
-  {
-    logo: target,
-    role: "Fulfillment Expert",
-    summary:
-      "Tasked primarily with locating and neatly packaging online orders that were to be shipped from the store and or picked up by guests. Very fast-paced environment as we were to always meet the assigned deadline for orders to be processed/due for pickup from the store. This entailed continuously pacing through the entirety of the store, searching for the items within our respective batches of orders whilst also attending to guests in need along the way",
-    tasks: [
-      "Picking and Packaging orders in a timely fashion",
-      "Training and supervising new members of staff",
-      "Ensuring that aisles were kept tidy and devoid of anything that could ruin the guest experience",
-      "Occasionally stocking shelves",
-    ],
-  },
-];
 
 function App() {
   return (
     <>
       <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-full h-screen">
         <div className="justify-end text-right pt-60 pr-20 mr-10">
-          <h1 className="text-7xl font-black text-zinc-100 ">
+          <h1 className="lg:text-7xl md:text-5xl sm:text-4xl xs:text-3xl font-black text-zinc-100 ">
             <ReactTyped strings={["HELLO AND WELCOME!"]} typeSpeed={120} loop />
           </h1>
-          <h2 className="text-6xl font-bold text-zinc-100 pt-8">
+          <h2 className="lg:text-6xl md:text-4xl sm:text-2xl xs:text-xl font-bold text-zinc-100 pt-8">
             I'M EJIRO IGUN...
           </h2>
         </div>
         <div className="flex ml-10 pl-10 space-x-24 mt-40">
-          <div className="flex-2 text-7xl text-zinc-100">
+          <div className="flex-2 lg:text-7xl text-zinc-100">
             <FiGithub />
           </div>
-          <div className="flex-2 text-7xl text-zinc-100">
+          <div className="flex-2 lg:text-7xl text-zinc-100">
             <FaDiscord />
           </div>
-          <div className="flex-2 text-7xl text-zinc-100">
+          <div className="flex-2 lg:text-7xl text-zinc-100">
             <FaLinkedinIn />
           </div>
         </div>

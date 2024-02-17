@@ -2,7 +2,7 @@ import test from "../public/profilePic.jpg";
 import target from "../public/Target_logo.svg.png";
 import sequoia from "../public/sequoia.png";
 
-const projects = [
+export const projects = [
   {
     id: 1,
     src: test,
@@ -68,7 +68,7 @@ const projects = [
   },
 ];
 
-const roles = [
+export const roles = [
   {
     id: 1,
     logo: "",
@@ -89,4 +89,32 @@ const roles = [
   },
 ];
 
-export default projects;
+
+export const job_experiences = [
+  {
+    logo: sequoia,
+    role: "Data Analyst",
+    summary:
+      "Tasked with maintaining a large database utilizing postgreSQL as well as various data manipulation libraries in python. Constucted dashboards and created reports that were instantly made accessible through automated emails and web applications that I designed using the streamlit framework.",
+    tasks: [
+      "Data Analysis: Primarily conducted through Python libraries such as Pandas and Numpy which aid with exploratory data analysis.",
+      "Data Cleaning and Transformation: Working with and cleansing data, ensuring consistency and proper articulation using Postgresql coincided with SQL toolkit SQLAlchemy integrated with Python.",
+      "Data Visualization and Presentation: Providing coherent summaries identifying patterns and trends in provided data. Creating visualizations including charts and dashboards with the aid of the Python library Streamlit, in order to convey said trends in an effective manner.",
+    ],
+  },
+  {
+    logo: target,
+    role: "Fulfillment Expert",
+    summary:
+      "Tasked primarily with locating and neatly packaging online orders that were to be shipped from the store and or picked up by guests. Very fast-paced environment as we were to always meet the assigned deadline for orders to be processed/due for pickup from the store. This entailed continuously pacing through the entirety of the store, searching for the items within our respective batches of orders whilst also attending to guests in need along the way",
+    tasks: [
+      "Picking and Packaging orders in a timely fashion",
+      "Training and supervising new members of staff",
+      "Ensuring that aisles were kept tidy and devoid of anything that could ruin the guest experience",
+      "Occasionally stocking shelves",
+    ],
+  },
+];
+
+
+
