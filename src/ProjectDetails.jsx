@@ -1,6 +1,12 @@
 import test from "../public/profilePic.jpg";
+import bfs from "../public/bfs.gif";
+import fsc from "../public/FSC.gif";
+import sorting from "../public/sorting.gif";
+import statics from "../public/statics.gif";
 import target from "../public/Target-logo.png";
 import sequoia from "../public/sequoia.png";
+import cooksite from "../public/cooksite.png";
+import mentor from "../public/mentorMind.png";
 import { FaJava, FaReact, FaPython, FaDocker } from "react-icons/fa";
 import { SiJunit5, SiMysql, SiDjango, SiSqlite } from "react-icons/si";
 
@@ -18,7 +24,7 @@ const logos = {
 export const projects = [
   {
     id: 1,
-    src: test,
+    src: fsc,
     alt: "First Project",
     title: "ASL Finger Spelling Classifier",
     description:
@@ -28,7 +34,7 @@ export const projects = [
   },
   {
     id: 2,
-    src: test,
+    src: sorting,
     alt: "Second Project",
     title: "Sorting Algorithm Visualizer",
     description:
@@ -38,7 +44,7 @@ export const projects = [
   },
   {
     id: 3,
-    src: test,
+    src: statics,
     alt: "Third Project",
     title: "Featherweight Javascript Intepreter",
     description:
@@ -48,7 +54,7 @@ export const projects = [
   },
   {
     id: 4,
-    src: test,
+    src: statics,
     alt: "Fourth Project",
     title: "DBMS Interface System",
     description:
@@ -58,7 +64,7 @@ export const projects = [
   },
   {
     id: 5,
-    src: test,
+    src: cooksite,
     alt: "Fifth Project",
     title: "Recipe Site",
     description:
@@ -68,7 +74,7 @@ export const projects = [
   },
   {
     id: 6,
-    src: test,
+    src: bfs,
     alt: "Sixth Project",
     title: "DFS/BFS Visualizer",
     description:
@@ -78,7 +84,7 @@ export const projects = [
   },
   {
     id: 7,
-    src: test,
+    src: mentor,
     alt: "Seventh Project",
     title: "Letter of Recommendation Template generator",
     description:

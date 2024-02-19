@@ -4,13 +4,15 @@ import { FiGithub } from "react-icons/fi";
 import { projects, job_experiences, roles } from "./ProjectDetails";
 import test from "../public/profilePic.jpg";
 // import Slider from "react-slick";
-import { Carousel, ScrollingCarousel } from "@trendyol-js/react-carousel";
+import { Carousel } from "@trendyol-js/react-carousel";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
+import Navbar from "./components/Navbar";
 //import "./App.css";
 
 function App() {
   return (
     <>
+      <Navbar />
       <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-full h-full">
         <div className="justify-end text-right pt-60 pr-20 mr-10">
           <h1 className="lg:text-7xl md:text-5xl sm:text-4xl xs:text-2xl font-black text-zinc-100 ">
@@ -43,7 +45,7 @@ function App() {
       </div>
 
       {/* About me section */}
-      <div className="Container pt-40 flex justify-center">
+      <div className="Container  pt-40 flex justify-center">
         <div
           className=" lg:flex box-border min-h-96 w-3/4 bg-gradient-to-r from-purple-400 to-indigo-400"
           style={{
@@ -59,10 +61,13 @@ function App() {
             />
           </div>
           <div className="lg:flex-1 lg:ml-2 md:ml-20  md:w-3/4 lg:w-1/2 pl-5">
-            <h1 className="md:text-3xl sm:text-2xl text-center text-zinc-100 font-bold underline pb-7 pt-10">
+            <h1
+              id="about"
+              className="md:text-3xl sm:text-2xl text-center text-zinc-100 font-bold underline pb-7 pt-10"
+            >
               ABOUT ME
             </h1>
-            <p className="md:text-2xl sm:text-xl xs:mx-10 text-zinc-100 font-semibold lg:pr-10 pb-10 xs:pr-2">
+            <p className="md:text-xl sm:text-xl xs:mx-10 text-zinc-100 font-semibold lg:pr-10 pb-10 xs:pr-2">
               I'm a senior currently attending San Jose State University and
               looking to obtain my bachelors in computer science by Spring 2024.
               I possess a wide array of skills and have experience working with
@@ -78,7 +83,10 @@ function App() {
 
       {/* Projects Carousel */}
       <div className="pt-32 pb-20">
-        <h1 className="text-center text-4xl font-bold pb-10 underline">
+        <h1
+          id="projects"
+          className="text-center text-4xl font-bold md:pb-10 xs:pb-2 underline"
+        >
           Projects
         </h1>
         <div className=" ">
@@ -88,13 +96,16 @@ function App() {
             transition={0.5}
             swiping={false}
             rightArrow={
-              <HiArrowSmRight className="text-6xl text-black mt-44" />
+              <HiArrowSmRight className="text-6xl text-zinc-100 mt-44" />
             }
-            leftArrow={<HiArrowSmLeft className="text-6xl text-black mt-44" />}
+            leftArrow={
+              <HiArrowSmLeft className="text-6xl text-zinc-100 mt-44" />
+            }
+            style={{ zIndex: -1, position: "relative" }}
           >
             {projects.map((item) => (
               <div
-                className="outline-8 outline-double outline-indigo-400 mx-10 my-10 carous w-4/5"
+                className="sm:outline-8  sm:outline-double sm:outline-indigo-400 sm:pl-10 sm:mx-10 my-10 carous"
                 key={item.id}
               >
                 <div className="pt-5">
@@ -107,13 +118,13 @@ function App() {
                 <h2 className="md:text-xl underline font-bold text-center">
                   {item.title}
                 </h2>
-                <div className="flex md:text-5xl sm:text-3xl xs:text-2xl pt-2 space-x-10 justify-center text-violet-700">
+                <div className="flex md:text-5xl sm:text-3xl xs:text-2xl pt-2 space-x-10 justify-center text-violet-400">
                   {item.stack.map((tech, index) => (
                     <div key={index}>{tech}</div>
                   ))}
                 </div>
                 <p className="md:text-lg px-10 pt-5">{item.description}</p>
-                <p className="pt-3 px-10 underline md:text-5xl text-violet-700">
+                <p className="pt-3 px-10 underline md:text-5xl xs:text-3xl text-violet-400">
                   <a href={item.githubURL} target="_blank">
                     <FaGithub />
                   </a>
@@ -126,7 +137,10 @@ function App() {
 
       {/* Experience section*/}
       <div className="pt-32">
-        <h1 className="text-center text-4xl font-bold pb-10 underline">
+        <h1
+          id="experiences"
+          className="text-center text-4xl font-bold pb-10 underline"
+        >
           EXPERIENCE
         </h1>
 
@@ -135,7 +149,7 @@ function App() {
             className="outline-8 outline-double outline-indigo-400 mx-10 mt-10 pt-10 mb-28 "
             key={index}
           >
-            <div className="lg:flex md:flex pl-20 pr-10 justify-center sm:pb-10 md:pb-20">
+            <div className="md:flex pl-20 pr-10 justify-center sm:pb-10 md:pb-20">
               <div className="experience md:flex-2 md:pt-20 xs:pt-10">
                 {/** Target EXperience */}
                 <img
