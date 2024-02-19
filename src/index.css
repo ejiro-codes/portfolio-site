@@ -77,3 +77,69 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+.about {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.exImage {
+  width: 400px;
+  object-fit: contain;
+}
+
+.carous {
+  height: 760px;
+  width: 600px;
+}
+
+.carouselImage {
+  width: 550px;
+  height: 300px;
+  margin-top: 20px;
+  padding-left: 60px;
+  object-fit: contain;
+  border-radius: 5%;
+}
+
+/* @media (max-width: 1279) {
+  
+} */
+
+@media (max-width: 1023px) {
+  .about {
+    height: 280px;
+    width: 300px;
+  }
+
+  .experience {
+    border-right: "3px";
+    border-right-color: black;
+    border-right-style: "groove";
+  }
+
+  .exImage {
+    width: 200px;
+    height: 300px;
+    object-fit: "contain";
+  }
+}
+@media (max-width: 767px) {
+  .about {
+    height: 180px;
+    width: 250px;
+  }
+
+  .exImage {
+    width: 400px;
+    object-fit: "contain";
+  }
+}
+@media (max-width: 500px) {
+  .about {
+    height: 150px;
+    width: 250px;
+  }
+}

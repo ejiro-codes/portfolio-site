@@ -1,7 +1,7 @@
 import { ReactTyped } from "react-typed";
-import { FaLinkedinIn, FaDiscord } from "react-icons/fa";
+import { FaLinkedinIn, FaDiscord, FaGithub } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import {projects, job_experiences, roles} from "./projectDetails";
+import { projects, job_experiences, roles } from "./ProjectDetails";
 import test from "../public/profilePic.jpg";
 // import Slider from "react-slick";
 import { Carousel, ScrollingCarousel } from "@trendyol-js/react-carousel";
@@ -11,24 +11,33 @@ import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 function App() {
   return (
     <>
-      <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-full h-screen">
+      <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-full h-full">
         <div className="justify-end text-right pt-60 pr-20 mr-10">
-          <h1 className="lg:text-7xl md:text-5xl sm:text-4xl xs:text-3xl font-black text-zinc-100 ">
+          <h1 className="lg:text-7xl md:text-5xl sm:text-4xl xs:text-2xl font-black text-zinc-100 ">
             <ReactTyped strings={["HELLO AND WELCOME!"]} typeSpeed={120} loop />
           </h1>
           <h2 className="lg:text-6xl md:text-4xl sm:text-2xl xs:text-xl font-bold text-zinc-100 pt-8">
             I'M EJIRO IGUN...
           </h2>
         </div>
-        <div className="flex ml-10 pl-10 space-x-24 mt-40">
-          <div className="flex-2 lg:text-7xl text-zinc-100">
-            <FiGithub />
+        <div className="flex ml-10 pl-10 space-x-24 xs:mt-40 lg:mt-32 pb-10">
+          <div className="flex-2 lg:text-7xl md:text-5xl sm:text-3xl xs:text-2xl text-zinc-100">
+            <a href="http://github.com/Ejiro-code" target="_blank">
+              <FiGithub />
+            </a>
           </div>
-          <div className="flex-2 lg:text-7xl text-zinc-100">
-            <FaDiscord />
+          <div className="flex-2 lg:text-7xl md:text-5xl sm:text-3xl xs:text-2xl text-zinc-100">
+            <a
+              href="https://www.discordapp.com/users/551921284296998932"
+              target="_blank"
+            >
+              <FaDiscord />
+            </a>
           </div>
-          <div className="flex-2 lg:text-7xl text-zinc-100">
-            <FaLinkedinIn />
+          <div className="flex-2 lg:text-7xl md:text-5xl sm:text-3xl xs:text-2xl text-zinc-100">
+            <a href="https://www.linkedin.com/in/ejiro-igun-/" target="_blank">
+              <FaLinkedinIn />
+            </a>
           </div>
         </div>
       </div>
@@ -36,78 +45,113 @@ function App() {
       {/* About me section */}
       <div className="Container pt-40 flex justify-center">
         <div
-          className=" flex box-border  min-h-96 w-3/4 bg-gradient-to-r from-purple-400 to-indigo-400"
+          className=" lg:flex box-border min-h-96 w-3/4 bg-gradient-to-r from-purple-400 to-indigo-400"
           style={{
             borderRadius: "80px",
-            boxShadow: "-9px 10px RGB(230, 194, 255)",
+            boxShadow: "-6px 7px RGB(250, 164, 255)",
           }}
         >
-          <div className="flex-none w-1/3">
+          <div className="lg:flex-none xs:ml-20 sm:ml-32 md:ml-48 lg:ml-10 w-1/3">
             <img
               src={test}
               alt=""
-              className="mt-12 ml-10 shadow-2xl ring-8 ring-offset-4 ring-offset-purple-400"
-              style={{
-                borderRadius: "50%",
-                height: "300px",
-                width: "300px",
-                objectFit: "cover",
-              }}
+              className="about mt-12 ml-10 shadow-2xl ring-8 ring-offset-4 ring-offset-purple-400"
             />
           </div>
-          <div className="flex-1 w-1/2 pl-5">
-            <h1 className="text-3xl text-zinc-100 font-bold underline pb-10 pt-10">
+          <div className="lg:flex-1 lg:ml-2 md:ml-20  md:w-3/4 lg:w-1/2 pl-5">
+            <h1 className="md:text-3xl sm:text-2xl text-center text-zinc-100 font-bold underline pb-7 pt-10">
               ABOUT ME
             </h1>
-            <p className="text-2xl text-zinc-100 font-semibold pr-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure,
-              corrupti facere tempore qui aliquam obcaecati incidunt nostrum
-              eaque magni libero molestiae soluta, ut tempora illum recusandae
-              perspiciatis, repellendus error. Cum nostrum quos sunt autem animi
-              ea impedit expedita quasi, numquam eos, nobis ducimus natus vero
-              eius hic error incidunt, vel nihil culpa. Nobis blanditiis
-              explicabo ipsam sapiente et delectus?
+            <p className="md:text-2xl sm:text-xl xs:mx-10 text-zinc-100 font-semibold lg:pr-10 pb-10 xs:pr-2">
+              I'm a senior currently attending San Jose State University and
+              looking to obtain my bachelors in computer science by Spring 2024.
+              I possess a wide array of skills and have experience working with
+              various technologies in specializations ranging from web
+              development to machine learning. At SJSU, I'm an active member of
+              computer science development team as well as a trainer for the
+              competitive programming club. My core languages are Java, C++, and
+              Python.
             </p>
           </div>
         </div>
       </div>
 
+      {/* Projects Carousel */}
+      <div className="pt-32 pb-20">
+        <h1 className="text-center text-4xl font-bold pb-10 underline">
+          Projects
+        </h1>
+        <div className=" ">
+          <Carousel
+            show={2}
+            slide={1}
+            transition={0.5}
+            swiping={false}
+            rightArrow={
+              <HiArrowSmRight className="text-6xl text-black mt-44" />
+            }
+            leftArrow={<HiArrowSmLeft className="text-6xl text-black mt-44" />}
+          >
+            {projects.map((item) => (
+              <div
+                className="outline-8 outline-double outline-indigo-400 mx-10 my-10 carous w-4/5"
+                key={item.id}
+              >
+                <div className="pt-5">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="carouselImage"
+                  />
+                </div>
+                <h2 className="md:text-xl underline font-bold text-center">
+                  {item.title}
+                </h2>
+                <div className="flex md:text-5xl sm:text-3xl xs:text-2xl pt-2 space-x-10 justify-center text-violet-700">
+                  {item.stack.map((tech, index) => (
+                    <div key={index}>{tech}</div>
+                  ))}
+                </div>
+                <p className="md:text-lg px-10 pt-5">{item.description}</p>
+                <p className="pt-3 px-10 underline md:text-5xl text-violet-700">
+                  <a href={item.githubURL} target="_blank">
+                    <FaGithub />
+                  </a>
+                </p>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+
       {/* Experience section*/}
-      <div className="container pt-32">
-        <h1 className="text-center text-4xl font-bold pb-10">EXPERIENCE</h1>
+      <div className="pt-32">
+        <h1 className="text-center text-4xl font-bold pb-10 underline">
+          EXPERIENCE
+        </h1>
 
         {job_experiences.map((exp, index) => (
-          <>
-            <div className="flex pb-20">
-              <div
-                className="flex-2 px-32 pt-20"
-                style={{
-                  borderRight: "3px",
-                  borderRightColor: "black",
-                  borderRightStyle: "groove",
-                }}
-              >
+          <div
+            className="outline-8 outline-double outline-indigo-400 mx-10 mt-10 pt-10 mb-28 "
+            key={index}
+          >
+            <div className="lg:flex md:flex pl-20 pr-10 justify-center sm:pb-10 md:pb-20">
+              <div className="experience md:flex-2 md:pt-20 xs:pt-10">
                 {/** Target EXperience */}
                 <img
                   src={exp.logo}
                   alt="TARGET LOGO"
-                  style={{
-                    minHeight: "300px",
-                    minWidth: "300px",
-                    maxHeight: "400px",
-                    maxWidth: "400px",
-                    objectFit: "contain",
-                  }}
+                  className="exImage md:mr-10 sm:ml-20"
                 />
               </div>
-              <div className="flex-1 pl-10 pr-32 pt-10">
+              <div className="md:flex-1 text-wrap pt-10">
                 {/** Target EXperience */}
                 <h2 className="text-2xl underline pb-5">{exp.role}</h2>
-                <p>{exp.summary}</p>
+                <p className="md:text-xl">{exp.summary}</p>
                 <ul className="pt-5">
                   {exp.tasks.map((task, index) => {
                     return (
-                      <li className="pt-2" key={index}>
+                      <li className="pt-2 md:text-xl" key={index}>
                         {task}
                       </li>
                     );
@@ -115,48 +159,8 @@ function App() {
                 </ul>
               </div>
             </div>
-          </>
-        ))}
-
-        {/* Projects Horizontal Scroll bar */}
-        <div className="container pt-32 pb-20">
-          <h1 className="text-center text-4xl font-bold pb-10">Projects</h1>
-          <div className="container ">
-            <Carousel
-              show={3.5}
-              slide={2}
-              transition={0.5}
-              swiping={false}
-              rightArrow={
-                <HiArrowSmRight className="text-4xl text-black mt-32" />
-              }
-              leftArrow={
-                <HiArrowSmLeft className="text-4xl text-black mt-32" />
-              }
-            >
-              {projects.map((item) => (
-                <div className="" key={item.id}>
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    width={200}
-                    height={200}
-                    style={{
-                      display: "flex",
-                      objectFit: "fill",
-                      margin: "0 auto",
-                      // height: "40vh",
-                      // width: "80%",
-                      borderRadius: "5%",
-                    }}
-                  />
-                  <h2 className="text-sm">{item.title}</h2>
-                  <p>{item.description}</p>
-                </div>
-              ))}
-            </Carousel>
           </div>
-        </div>
+        ))}
       </div>
     </>
   );
