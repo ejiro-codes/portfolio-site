@@ -35,7 +35,12 @@ function App() {
       <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-full h-full">
         <div className="justify-end text-right pt-60 pr-20 mr-10">
           <h1 className="lg:text-7xl md:text-5xl sm:text-4xl xs:text-2xl font-black text-zinc-100 ">
-            <ReactTyped strings={["HELLO AND WELCOME!"]} typeSpeed={120} loop />
+            <ReactTyped
+              strings={["HELLO AND WELCOME!"]}
+              key={0}
+              typeSpeed={120}
+              loop
+            />
           </h1>
           <h2 className="lg:text-6xl md:text-4xl sm:text-2xl xs:text-xl font-bold text-zinc-100 pt-8">
             I'M EJIRO IGUN...
@@ -145,7 +150,6 @@ function App() {
             slide={1}
             transition={0.5}
             swiping={false}
-            dynamic={true}
             rightArrow={
               <HiArrowSmRight className="md:text-6xl xs:text-3xl text-zinc-100 mt-44" />
             }
@@ -153,7 +157,6 @@ function App() {
               <HiArrowSmLeft className="md:text-6xl xs:text-3xl text-zinc-100 mt-44 md:mr-20 " />
             }
             className="carousel"
-            style={{ zIndex: 99, position: "relative" }}
           >
             {/* sm:outline-8 sm:outline-double sm:outline-indigo-400 sm:pl-10 sm:mx-10 md:my-10 xs:my-5  */}
             {projects.map((item) => (
