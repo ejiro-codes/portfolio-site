@@ -7,8 +7,9 @@ import target from "../public/Target-logo.png";
 import sequoia from "../public/sequoia.png";
 import cooksite from "../public/cooksite.png";
 import mentor from "../public/mentorMind.png";
-import { FaJava, FaReact, FaPython, FaDocker } from "react-icons/fa";
-import { SiJunit5, SiMysql, SiDjango, SiSqlite } from "react-icons/si";
+import { FaJava, FaReact, FaPython, FaDocker,FaHtml5,FaCss3Alt,FaFlask,FaBootstrap } from "react-icons/fa";
+import { SiJunit5, SiMysql, SiDjango, SiSqlite,SiTailwindcss,SiScikitlearn,SiPandas,SiNumpy,SiTensorflow } from "react-icons/si";
+import { DiCode,DiDjango,DiJavascript,DiJsBadge,DiPostgresql,DiMongodb } from "react-icons/di";
 
 const logos = {
   java: <FaJava />,
@@ -20,6 +21,95 @@ const logos = {
   django: <SiDjango />,
   sqlite: <SiSqlite />,
 };
+
+export const languages = [{
+  name: "Java",
+  logo: <FaJava/>
+},
+{
+  name: "Python",
+  logo: <FaPython/>
+},
+{
+  name: "C++",
+  logo: <DiCode/>
+},
+{
+  name: "Javascript",
+  logo: <DiJsBadge/>
+},
+{
+  name: "HTML",
+  logo: <FaHtml5/>
+},
+{
+  name: "CSS",
+  logo: <FaCss3Alt/>
+},
+{
+  name: "PostgreSQL",
+  logo: <DiPostgresql/>
+},
+{
+  name: "MySQL",
+  logo: <SiMysql/>
+},
+
+]
+
+export const libraries = [
+  {
+    name: "JUnit",
+    logo: <SiJunit5/>
+  },
+  {
+    name: "SciKit Learn",
+    logo: <SiScikitlearn/>
+  },
+  {
+    name: "Pandas",
+    logo: <SiPandas/>
+  },
+  {
+    name: "Numpy",
+    logo: <SiNumpy/>
+  },
+  {
+    name: "Tensorflow",
+    logo: <SiTensorflow/>
+  },
+  {
+    name: "Seaborn",
+    logo: <FaPython/>
+  },
+  {
+    name: "MatPlotlib",
+    logo: <FaPython/>
+  },
+]
+export const framework = [
+  {
+    name: "Django",
+    logo: <DiDjango/>
+  },
+  {
+    name: "React",
+    logo: <FaReact/>
+  },
+  {
+    name: "Flask",
+    logo: <FaFlask/>
+  },
+  {
+    name: "Bootstrap",
+    logo: <FaBootstrap/>
+  },
+  {
+    name: "Tailwind",
+    logo: <SiTailwindcss/>
+  },
+]
+
 
 export const projects = [
   {
@@ -48,7 +138,7 @@ export const projects = [
     alt: "Third Project",
     title: "Featherweight Javascript Intepreter",
     description:
-      "Built an interpreter as a class project for my programming paradigms course for the featherweight javascript programming language. This included writing a lexer and parser that was used to construct an abstract syntax tree with the aid of the ANTLR package. Semantics of the language were validated with adequate JUnit testing. The language was built to support conditions, loops, binary operation expressions, closures, functions, variable declarations and a few more functionalities.",
+      "This project involved writing a lexer and parser that was used to construct an abstract syntax tree with the aid of the ANTLR package. Semantics of the language were validated with adequate JUnit testing. The language was built to support conditions, loops, binary operation expressions, closures, functions, variable declarations and a few more functionalities.",
     stack: [logos.java, logos.junit],
     githubURL: "#",
   },
@@ -88,7 +178,7 @@ export const projects = [
     alt: "Seventh Project",
     title: "Letter of Recommendation Template generator",
     description:
-      "Built a desktop application that allowed professors to create customized templates for students whom they intended to draft letter of recommendation. This project was carried out in a team of four and I primarily took charge of the front-end design and implementation using the Java FX Framework as well as design a protion of the sqlite database. The project maintained the standard MVC pattern and also supported a search functionality to improve ease of use.",
+      "Built a desktop application that allowed professors to create customized templates for students whom they intended to draft letter of recommendation. This project was carried out in a team of four and I primarily took charge of the front-end design and implementation using the Java FX Framework as well as design a protion of the sqlite database.",
     stack: [logos.java, logos.sqlite],
     githubURL: "https://github.com/Ejiro-code/MentorMind",
   },

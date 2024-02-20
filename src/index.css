@@ -28,23 +28,90 @@ body {
   object-fit: contain;
 }
 
-.carous {
+
+
+.stolen {
+  position: relative;
+  width: 500px;
   height: 760px;
-  width: 600px;
+  background: repeating-conic-gradient(from var(--a), #a855f7 0%,
+  #a855f7 5%, transparent 5%, transparent 40%, #a855f7 50%);
+  animation: animate 4s linear infinite;
+  border-radius: 20px;
+  z-index: -1;
 }
 
-.carouselImage {
-  width: 550px;
-  height: 300px;
-  margin-top: 20px;
-  padding-left: 60px;
-  object-fit: contain;
-  border-radius: 5%;
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
 }
 
+@keyframes animate
+{
+  0%
+  {
+    --a: 0deg;
+  }
+  100%
+  {
+    --a: 360deg;
+  }
+}
+
+.stolen::before
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(from var(--a), #6366f1 0%,
+        #6366f1 5%, transparent 5%, transparent 40%, #6366f1 50%);
+  animation: animate 4s linear infinite;
+  animation-delay: -1s;
+  border-radius: 20px;
+  z-index: -1;
+}
+.stolen::after
+{
+  content: '';
+  position: absolute;
+  inset: 8px;
+  background-color: #25252b;
+  border-radius: 15px;
+  border: 8px solid #25252b;
+  z-index: -1;
+  /* background: repeating-conic-gradient(from var(--a), #45f3ff 0%,
+        #45f3ff 5%, transparent 5%, transparent 40%, #45f3ff 50%);
+  animation: animate 4s linear infinite;
+  animation-delay: -1s;
+  border-radius: 20px; */
+}
 /* @media (max-width: 1279) {
   
 } */
+
+
+
+.carous {
+  height: 760px;
+  width: 500px;
+  border: 5px solid purple;
+}
+
+.carouselImage {
+  width: 500px;
+  height: 280px;
+  margin-top: 20px;
+  padding-top: 15px;
+  object-fit: contain;
+}
+
+
+.carousel {
+  padding-left: 20px;
+}
+
 
 @media (max-width: 1023px) {
   .about {
@@ -68,6 +135,7 @@ body {
   .about {
     height: 180px;
     width: 250px;
+
   }
 
   .exImage {
@@ -75,28 +143,38 @@ body {
     object-fit: "contain";
   }
 
+  .carouselImage {
+    width: 350px;
+    height: 240px;
+    margin-top: 10px;
+    margin-left: 30px;
+    object-fit: contain;
+  }
+
   .carous {
-    height: 760px;
-    width: 400px;
+    height: 580px;
+    width: 450px;
+    border: 5px solid purple;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 557px) {
   .about {
     height: 150px;
     width: 250px;
   }
 
   .carouselImage {
-    width: 400px;
-    height: 300px;
-    margin-top: 20px;
-    padding-left: 60px;
+    width: 350px;
+    height: 240px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     object-fit: contain;
-    border-radius: 5%;
   }
 
   .carous {
-    height: 950px;
-    width: 350px;
+    height: 650px;
+    width: 410px;
+
+    border: 5px solid purple;
   }
 }

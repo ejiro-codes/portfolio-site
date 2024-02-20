@@ -1,7 +1,7 @@
 import { ReactTyped } from "react-typed";
 import { FaLinkedinIn, FaDiscord, FaGithub } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import { projects, job_experiences, roles } from "./ProjectDetails";
+import { projects, job_experiences, roles, languages, framework, libraries } from "./ProjectDetails";
 import test from "../public/profilePic.jpg";
 // import Slider from "react-slick";
 import { Carousel } from "@trendyol-js/react-carousel";
@@ -81,6 +81,44 @@ function App() {
         </div>
       </div>
 
+          {/* Skills Section */}
+        <div className="container pt-10">
+            <h1
+          id="skills"
+          className="text-center text-4xl font-bold md:pb-10 xs:pb-2 underline"
+        >
+          Skills
+        </h1>
+          <div className="pt-3 flex flex-wrap space-x-3 justify-center">
+            <h2 className="md:text-2xl">Languages : </h2>
+            {languages.map((l) => (
+              <div className="flex">
+                <p className="md:text-3xl "> {l.logo} </p>
+                <p className="md:text-xl pl-1">{l.name}</p>
+              </div>
+            ))}
+          </div>
+          <div className="pt-7 flex flex-wrap space-x-3 justify-center">
+            <h2 className="md:text-2xl">Frameworks : </h2>
+            {framework.map((l) => (
+              <div className="flex">
+                <p className="md:text-3xl "> {l.logo} </p>
+                <p className="md:text-xl pl-1">{l.name}</p>
+              </div>
+            ))}
+          </div>
+          <div className="pt-7 flex flex-wrap space-x-3 justify-center">
+            <h2 className="md:text-2xl">Libraries : </h2>
+            {libraries.map((l) => (
+              <div className="flex">
+                <p className="md:text-3xl "> {l.logo} </p>
+                <p className="md:text-xl pl-1">{l.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+
       {/* Projects Carousel */}
       <div className="pt-32 pb-20">
         <h1
@@ -96,19 +134,21 @@ function App() {
             transition={0.5}
             swiping={false}
             rightArrow={
-              <HiArrowSmRight className="text-6xl text-zinc-100 mt-44" />
+              <HiArrowSmRight className="md:text-6xl xs:text-5xl text-zinc-100 mt-44" />
             }
             leftArrow={
-              <HiArrowSmLeft className="text-6xl text-zinc-100 mt-44" />
+              <HiArrowSmLeft className="md:text-6xl xs:text-3xl text-zinc-100 mt-44" />
             }
-            style={{ zIndex: -1, position: "relative" }}
+            className="carousel"
           >
+            {/* sm:outline-8 sm:outline-double sm:outline-indigo-400 sm:pl-10 sm:mx-10 md:my-10 xs:my-5  */}
             {projects.map((item) => (
+              <div className="">
               <div
-                className="sm:outline-8  sm:outline-double sm:outline-indigo-400 sm:pl-10 sm:mx-10 my-10 carous"
+                className="stolen carous "
                 key={item.id}
               >
-                <div className="pt-5">
+                <div className="">
                   <img
                     src={item.src}
                     alt={item.alt}
@@ -123,12 +163,14 @@ function App() {
                     <div key={index}>{tech}</div>
                   ))}
                 </div>
-                <p className="md:text-lg px-10 pt-5">{item.description}</p>
+                <p className="md:text-lg xs:text-sm font-bold px-10 pt-2 md:h-1/3">{item.description}</p>
                 <p className="pt-3 px-10 underline md:text-5xl xs:text-3xl text-violet-400">
                   <a href={item.githubURL} target="_blank">
                     <FaGithub />
                   </a>
                 </p>
+              </div>
+
               </div>
             ))}
           </Carousel>
@@ -151,7 +193,7 @@ function App() {
           >
             <div className="md:flex pl-20 pr-10 justify-center sm:pb-10 md:pb-20">
               <div className="experience md:flex-2 md:pt-20 xs:pt-10">
-                {/** Target EXperience */}
+                {/** Sequoia EXperience */}
                 <img
                   src={exp.logo}
                   alt="TARGET LOGO"
