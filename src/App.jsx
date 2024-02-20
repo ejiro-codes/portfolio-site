@@ -1,4 +1,5 @@
 import { ReactTyped } from "react-typed";
+import React from "react";
 import { FaLinkedinIn, FaDiscord, FaGithub } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import {
@@ -18,10 +19,20 @@ import Footer from "./components/Footer";
 //import "./App.css";
 
 function App() {
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 1023;
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
     <>
       <Navbar />
-      <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-full h-full">
+      <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-screen h-full">
         <div className="justify-end text-right pt-60 pr-20 mr-10">
           <h1 className="lg:text-7xl md:text-5xl sm:text-4xl xs:text-2xl font-black text-zinc-100 ">
             <ReactTyped strings={["HELLO AND WELCOME!"]} typeSpeed={120} loop />
@@ -54,8 +65,8 @@ function App() {
 
       {/* About me section */}
       <div className="Container  pt-40 flex justify-center">
-        <div className="rounds lg:flex box-border min-h-96 w-3/4 bg-gradient-to-r from-purple-400 to-indigo-400">
-          <div className="lg:flex-none xs:ml-20 sm:ml-32 md:ml-48 lg:ml-10 w-1/3">
+        <div className="rounds lg:flex box-border min-h-96 w-4/5 bg-gradient-to-r from-purple-400 to-indigo-400">
+          <div className="lg:flex-none xs:ml-20 sm:ml-32 md:ml-48 lg:ml-10 lg:mr-20 xl:mr-0 w-1/3">
             <img
               src={test}
               alt=""
@@ -130,10 +141,11 @@ function App() {
         </h1>
         <div className=" ">
           <Carousel
-            show={2}
+            show={width > breakpoint ? 2 : 1}
             slide={1}
             transition={0.5}
             swiping={false}
+            dynamic={true}
             rightArrow={
               <HiArrowSmRight className="md:text-6xl xs:text-3xl text-zinc-100 mt-44" />
             }
@@ -146,11 +158,7 @@ function App() {
             {/* sm:outline-8 sm:outline-double sm:outline-indigo-400 sm:pl-10 sm:mx-10 md:my-10 xs:my-5  */}
             {projects.map((item) => (
               <div className="">
-                <div
-                  className="stolen carous "
-                  style={{ zIndex: 0, position: "relative" }}
-                  key={item.id}
-                >
+                <div className="stolen carous " key={item.id}>
                   <div className="">
                     <img
                       src={item.src}
@@ -169,7 +177,7 @@ function App() {
                   <p className="md:text-lg xs:text-sm font-bold px-10 pt-2 md:h-1/3">
                     {item.description}
                   </p>
-                  <p className="pt-3 px-10 underline md:text-5xl xs:text-3xl text-violet-400">
+                  <p className="mt-3 mx-10 underline md:text-5xl xs:text-3xl text-violet-400">
                     <a href={item.githubURL} target="_blank">
                       <FaGithub />
                     </a>
