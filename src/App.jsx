@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-screen h-full">
+      <div className=" font-['Chakra Petch'] shadow-lg shadow-indigo-500/50 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 w-full h-full">
         <div className="justify-end text-right pt-60 pr-20 mr-10">
           <h1 className="lg:text-7xl md:text-5xl sm:text-4xl xs:text-2xl font-black text-zinc-100 ">
             <ReactTyped strings={["HELLO AND WELCOME!"]} typeSpeed={120} loop />
@@ -95,7 +95,7 @@ function App() {
       </div>
 
       {/* Skills Section */}
-      <div className="container mt-20 xs:mx-12 lg:mx-0 md:mx-12">
+      <div className="container mt-20 xs:mx-12 lg:ml-24 xl:mx-0 md:mx-12 lg:w-4/5 xl:w-full">
         <h1
           id="skills"
           className="text-center text-4xl font-bold md:pb-10 xs:pb-2 underline"
