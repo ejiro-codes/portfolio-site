@@ -13,7 +13,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  color: rgb(255, 108, 211);
+  color: #ffffff;
 }
 
 .about {
@@ -28,53 +28,58 @@ body {
   object-fit: contain;
 }
 
-
-
 .stolen {
   position: relative;
   width: 500px;
   height: 760px;
-  background: repeating-conic-gradient(from var(--a), #a855f7 0%,
-  #a855f7 5%, transparent 5%, transparent 40%, #a855f7 50%);
+  background: repeating-conic-gradient(
+    from var(--a),
+    #a855f7 0%,
+    #a855f7 5%,
+    transparent 5%,
+    transparent 40%,
+    #a855f7 50%
+  );
   animation: animate 4s linear infinite;
   border-radius: 20px;
   z-index: -1;
 }
 
 @property --a {
-  syntax: '<angle>';
+  syntax: "<angle>";
   inherits: false;
   initial-value: 0deg;
 }
 
-@keyframes animate
-{
-  0%
-  {
+@keyframes animate {
+  0% {
     --a: 0deg;
   }
-  100%
-  {
+  100% {
     --a: 360deg;
   }
 }
 
-.stolen::before
-{
-  content: '';
+.stolen::before {
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: repeating-conic-gradient(from var(--a), #6366f1 0%,
-        #6366f1 5%, transparent 5%, transparent 40%, #6366f1 50%);
+  background: repeating-conic-gradient(
+    from var(--a),
+    #6366f1 0%,
+    #6366f1 5%,
+    transparent 5%,
+    transparent 40%,
+    #6366f1 50%
+  );
   animation: animate 4s linear infinite;
   animation-delay: -1s;
   border-radius: 20px;
   z-index: -1;
 }
-.stolen::after
-{
-  content: '';
+.stolen::after {
+  content: "";
   position: absolute;
   inset: 8px;
   background-color: #25252b;
@@ -91,8 +96,6 @@ body {
   
 } */
 
-
-
 .carous {
   height: 760px;
   width: 500px;
@@ -107,11 +110,21 @@ body {
   object-fit: contain;
 }
 
-
 .carousel {
   padding-left: 20px;
 }
 
+.exp {
+  height: max-content;
+  width: 1300px;
+  border: 5px solid #6366f1;
+  margin-bottom: 20px;
+}
+
+.rounds {
+  border-radius: 80px;
+  box-shadow: -9px 7px #a468dd;
+}
 
 @media (max-width: 1023px) {
   .about {
@@ -130,12 +143,22 @@ body {
     height: 300px;
     object-fit: "contain";
   }
+
+  .exp {
+    height: max-content;
+    width: 900px;
+    border: 5px solid #6366f1;
+    margin-bottom: 20px;
+  }
+  .rounds {
+    border-radius: 10px;
+    box-shadow: -9px 7px #a468dd;
+  }
 }
 @media (max-width: 767px) {
   .about {
     height: 180px;
     width: 250px;
-
   }
 
   .exImage {
@@ -156,6 +179,10 @@ body {
     width: 450px;
     border: 5px solid purple;
   }
+  .rounds {
+    border-radius: 10px;
+    box-shadow: -9px 7px #a468dd;
+  }
 }
 @media (max-width: 557px) {
   .about {
@@ -164,7 +191,7 @@ body {
   }
 
   .carouselImage {
-    width: 350px;
+    width: 270px;
     height: 240px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -173,8 +200,51 @@ body {
 
   .carous {
     height: 650px;
-    width: 410px;
+    width: 350px;
 
     border: 5px solid purple;
+  }
+  .exp {
+    height: max-content;
+    width: 400px;
+    border: 5px solid #6366f1;
+    margin-bottom: 20px;
+    margin-left: 15px;
+  }
+  .rounds {
+    border-radius: 10px;
+    box-shadow: -9px 7px #a468dd;
+  }
+}
+@media (max-width: 420px) {
+  .about {
+    height: 150px;
+    width: 250px;
+  }
+
+  .carouselImage {
+    width: 240px;
+    height: 240px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+
+  .carous {
+    height: 670px;
+    width: 300px;
+
+    border: 5px solid purple;
+  }
+  .exp {
+    height: max-content;
+    width: 400px;
+    border: 5px solid #6366f1;
+    margin-bottom: 20px;
+    margin-left: 7px;
+  }
+  .rounds {
+    border-radius: 30px;
+    box-shadow: -9px 7px #a468dd;
   }
 }
