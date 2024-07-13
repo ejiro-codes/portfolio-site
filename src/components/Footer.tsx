@@ -1,5 +1,5 @@
 import React from "react";
-import resume from "../../public/Ejiros_Resume.pdf";
+import resume from "/Ejiros_Resume.pdf";
 
 function Footer() {
   return (

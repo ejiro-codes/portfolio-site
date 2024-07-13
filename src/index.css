@@ -9,7 +9,7 @@
   }
 }
 body {
-  background-image: url("../public/sample1.gif");
+  background-image: url("/sample1.gif");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

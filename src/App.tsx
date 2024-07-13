@@ -10,7 +10,7 @@ import {
   framework,
   libraries,
 } from "./ProjectDetails";
-import test from "../public/profilePic.jpg";
+import test from "/profilePic.jpg";
 // import Slider from "react-slick";
 import { Carousel } from "@trendyol-js/react-carousel";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
@@ -19,8 +19,8 @@ import Footer from "./components/Footer";
 //import "./App.css";
 
 function App() {
-  const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 1023;
+  const [width, setWidth] : any = React.useState(window.innerWidth);
+  const breakpoint: number = 1023;
 
   React.useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
@@ -109,7 +109,7 @@ function App() {
         </h1>
         <div className="pt-3 flex flex-wrap space-x-3 justify-center">
           <h2 className="md:text-2xl font-bold">Languages : </h2>
-          {languages.map((l) => (
+          {languages.map((l: { logo: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }) => (
             <div className="flex">
               <p className="md:text-3xl "> {l.logo} </p>
               <p className="md:text-xl pl-1">{l.name}</p>
@@ -118,7 +118,7 @@ function App() {
         </div>
         <div className="pt-7 flex flex-wrap space-x-3 justify-center">
           <h2 className="md:text-2xl font-bold">Frameworks : </h2>
-          {framework.map((l) => (
+          {framework.map((l: any) => (
             <div className="flex">
               <p className="md:text-3xl "> {l.logo} </p>
               <p className="md:text-xl pl-1">{l.name}</p>
@@ -127,7 +127,7 @@ function App() {
         </div>
         <div className="pt-7 flex flex-wrap space-x-3 justify-center">
           <h2 className="md:text-2xl font-bold">Libraries : </h2>
-          {libraries.map((l) => (
+          {libraries.map((l: any) => (
             <div className="flex">
               <p className="md:text-3xl "> {l.logo} </p>
               <p className="md:text-xl pl-1">{l.name}</p>
@@ -159,7 +159,7 @@ function App() {
             className="carousel"
           >
             {/* sm:outline-8 sm:outline-double sm:outline-indigo-400 sm:pl-10 sm:mx-10 md:my-10 xs:my-5  */}
-            {projects.map((item) => (
+            {projects.map((item: any) => (
               <div className="">
                 <div className="stolen carous " key={item.id}>
                   <div className="">
@@ -173,7 +173,7 @@ function App() {
                     {item.title}
                   </h2>
                   <div className="flex md:text-5xl sm:text-3xl xs:text-2xl pt-2 space-x-10 justify-center text-violet-400">
-                    {item.stack.map((tech, index) => (
+                    {item.stack.map((tech: any, index: number) => (
                       <div key={index}>{tech}</div>
                     ))}
                   </div>
@@ -201,7 +201,7 @@ function App() {
           EXPERIENCE
         </h1>
         {/* outline-8 outline-double outline-indigo-400 mx-10 mt-10 pt-10 mb-28  */}
-        {job_experiences.map((exp, index) => (
+        {job_experiences.map((exp: any, index: number) => (
           <div className="exp xl:mx-24 md:mx-8" key={index}>
             <div className="md:flex mx-5 justify-center mb-20">
               <div className="experience md:flex-2 md:pt-20 xs:pt-10">
@@ -217,7 +217,7 @@ function App() {
                 <h2 className="text-2xl underline pb-5 ">{exp.role}</h2>
                 <p className="md:text-lg sm:text-md font-bold">{exp.summary}</p>
                 <ol className="pt-5">
-                  {exp.tasks.map((task, index) => {
+                  {exp.tasks.map((task: any, index: number) => {
                     return (
                       <li
                         className="pt-5 md:text-lg sm:text-md font-bold"
