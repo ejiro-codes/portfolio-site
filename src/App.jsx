@@ -48,7 +48,7 @@ function App() {
         </div>
         <div className="flex ml-10 pl-10 space-x-24 xs:mt-40 lg:mt-32 pb-10">
           <div className="flex-2 lg:text-7xl md:text-5xl sm:text-3xl xs:text-2xl text-zinc-100">
-            <a href="http://github.com/Ejiro-code" target="_blank">
+            <a href="https://github.com/ejiro-codes" target="_blank">
               <FiGithub />
             </a>
           </div>
